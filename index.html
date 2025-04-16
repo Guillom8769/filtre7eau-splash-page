@@ -3,24 +3,88 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>filtre7eau-splash-page</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+    <title>Filtre7Eau - L'eau pure à portée de robinet | Filtration ultra-fine 0,1µm</title>
+    <meta name="description" content="Découvrez Filtre7Eau, le filtre sous évier révolutionnaire avec filtration ultra-fine 0,1µm et débit élevé de 7L/min. Installation facile, écologique et économique." />
+    <meta name="author" content="Filtre7Eau" />
+    <meta name="keywords" content="filtre eau, eau potable, filtration eau, microplastiques, filtre sous évier, eau pure, filtration fine" />
 
-    <meta property="og:title" content="filtre7eau-splash-page" />
-    <meta property="og:description" content="Lovable Generated Project" />
+    <meta property="og:title" content="Filtre7Eau - L'eau pure à portée de robinet" />
+    <meta property="og:description" content="Filtre sous évier révolutionnaire avec filtration ultra-fine 0,1µm et débit élevé de 7L/min. Installation facile, écologique et économique." />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta property="og:url" content="https://filtre7eau.fr" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
+    <meta name="twitter:title" content="Filtre7Eau - L'eau pure à portée de robinet" />
+    <meta name="twitter:description" content="Filtre sous évier révolutionnaire avec filtration ultra-fine 0,1µm et débit élevé de 7L/min." />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
   </head>
 
   <body>
     <div id="root"></div>
+    <!-- Stripe JS -->
+    <script src="https://js.stripe.com/v3/"></script>
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Schema.org structured data for SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Filtre7Eau",
+        "description": "Filtre sous évier révolutionnaire avec filtration ultra-fine 0,1µm et débit élevé de 7L/min. Installation facile, écologique et économique.",
+        "image": "https://lovable.dev/opengraph-image-p98pqg.png",
+        "brand": {
+          "@type": "Brand",
+          "name": "Filtre7Eau"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "299.00",
+          "priceCurrency": "EUR",
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    </script>
+    
+    <!-- Schema.org FAQ for SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Comment installer le Filtre7Eau ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "L'installation est très simple et ne nécessite aucun travail de plomberie complexe. Le Filtre7Eau se connecte directement à votre robinet existant via un tube discret d'environ 50cm. Vous recevrez un guide d'installation détaillé avec votre commande, et l'installation prend généralement moins de 10 minutes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quelle est la durée de vie du filtre ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Le Filtre7Eau a une durée de vie d'un an en utilisation normale. Contrairement aux filtres standard qui nécessitent un remplacement tous les 3 à 6 mois, notre technologie avancée permet une durée d'utilisation prolongée tout en maintenant des performances optimales."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Que filtre exactement le Filtre7Eau ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Le Filtre7Eau élimine efficacement : Microplastiques (jusqu'à 0,1µm), Chlore, Métaux lourds, Pesticides, Résidus médicamenteux, Bactéries et parasites."
+            }
+          }
+        ]
+      }
+    </script>
   </body>
 </html>
