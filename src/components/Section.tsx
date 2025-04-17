@@ -17,17 +17,17 @@ const Section = ({
 }: SectionProps) => {
   const bgStyles = {
     white: "bg-white",
-    water: "bg-gradient-to-b from-water-light/20 to-water-light/40",
-    eco: "bg-gradient-to-b from-eco-light/30 to-eco-light/50",
-    sand: "bg-gradient-to-b from-sand-light/20 to-sand-light/40",
-    neutral: "bg-gradient-to-b from-neutral-light/20 to-neutral-light/40",
+    water: "bg-gradient-to-b from-water-light/10 to-water-light/30",
+    eco: "bg-gradient-to-b from-eco-light/20 to-eco-light/40",
+    sand: "bg-gradient-to-b from-sand-light/10 to-sand-light/30",
+    neutral: "bg-gradient-to-b from-neutral-light/10 to-neutral-light/30",
   };
 
   return (
     <section
       id={id}
       className={cn(
-        "w-full py-20 px-4 md:py-28 md:px-8",
+        "w-full py-24 px-4 md:py-32 md:px-8",
         bgStyles[background],
         className
       )}

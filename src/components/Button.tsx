@@ -24,7 +24,7 @@ const Button = ({
   const variantStyles = {
     primary: "bg-water text-white hover:bg-water-dark shadow-sm hover:shadow-md",
     secondary: "bg-eco text-white hover:bg-eco-dark shadow-sm hover:shadow-md",
-    outline: "bg-transparent border border-water text-water hover:bg-water/5"
+    outline: "bg-transparent border border-water/40 text-water hover:bg-water/5 backdrop-blur-sm"
   };
   
   const sizeStyles = {
