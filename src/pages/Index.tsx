@@ -1,6 +1,6 @@
 
 import { ArrowDown, Droplet, Medal, Leaf, Timer, Heart, Shield, Wrench, Star, Send } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Button from "@/components/Button";
 import Section from "@/components/Section";
 import Testimonial from "@/components/Testimonial";
@@ -12,7 +12,10 @@ import Accordion from "@/components/Accordion";
 
 const Index = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [heroVisible, setHeroVisible] = useState(false);
+  const heroRef = useRef<HTMLDivElement>(null);
 
+  // Track scroll position
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -21,6 +24,19 @@ const Index = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Trigger hero animations after component mounts
+  useEffect(() => {
+    setHeroVisible(true);
+  }, []);
+
+  // Scroll to the next section when clicking "Découvrir"
+  const scrollToAbout = () => {
+    const element = document.getElementById("about");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   const comparisonFeatures = [
     {
@@ -130,16 +146,16 @@ const Index = () => {
 
   return (
     <div className="relative">
-      {/* Navigation */}
+      {/* Navigation - updated with more minimal Apple-like styling */}
       <header 
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled ? "bg-white shadow-md py-2" : "bg-transparent py-4"
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+          isScrolled ? "bg-white/90 backdrop-blur-md shadow-sm py-3" : "bg-transparent py-5"
         }`}
       >
         <div className="container mx-auto px-4 flex items-center justify-between">
           <div className="flex items-center">
             <Droplet className="text-water mr-2" size={24} />
-            <span className="font-bold text-xl text-water">Filtre7Eau</span>
+            <span className={`font-light text-xl tracking-wider ${isScrolled ? "text-water" : "text-white"}`}>7Eau</span>
           </div>
           <Button 
             variant={isScrolled ? "primary" : "outline"} 
@@ -156,50 +172,78 @@ const Index = () => {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center bg-hero-pattern relative overflow-hidden pt-16">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-water-dark opacity-20"></div>
+      {/* Hero Section - redesigned with premium aesthetic */}
+      <div 
+        ref={heroRef}
+        className="min-h-screen flex items-center justify-center bg-gradient-to-b from-water-dark/10 to-water-light/20 relative overflow-hidden"
+      >
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1580437082423-4f0e58a2d413?q=80&w=2670')] bg-cover bg-center opacity-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-white/0 via-white/20 to-white/60"></div>
         
-        <div className="container mx-auto px-4 text-center text-white z-10 py-16">
-          <div className="animate-fade-in">
-            <Droplet className="inline-block mb-4 animate-float" size={60} />
-            <h1 className="text-4xl md:text-6xl font-bold mb-4">
-              L'eau pure à portée de robinet
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
-              Filtre7Eau : filtration ultra-fine 0,1µm, débit exceptionnel de 7L/min
-            </p>
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="mb-8 hover:bg-white hover:text-water-dark"
-              onClick={() => {
-                const element = document.getElementById("buy");
-                if (element) {
-                  element.scrollIntoView({ behavior: "smooth" });
-                }
-              }}
-            >
-              Commander maintenant
-            </Button>
+        <div className="container mx-auto px-4 z-10 py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            {/* Text content */}
+            <div className={`transition-all duration-1000 transform ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extralight text-water-dark tracking-tight mb-8 leading-tight">
+                L'excellence de l'industrie dans votre cuisine
+              </h1>
+              
+              <div className="space-y-4 mb-8">
+                {[
+                  { delay: 100, text: "Ultrafiltration 0,1 micron" },
+                  { delay: 200, text: "Bloc de charbon actif" },
+                  { delay: 300, text: "Débit de 7L/min" },
+                  { delay: 400, text: "Installation sans travaux" },
+                  { delay: 500, text: "Eau pure, sans contraintes" }
+                ].map((item, index) => (
+                  <div 
+                    key={index}
+                    className={`flex items-center transition-all duration-700 delay-${item.delay} transform ${heroVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}
+                  >
+                    <div className="w-1.5 h-1.5 rounded-full bg-water-dark mr-3"></div>
+                    <p className="text-lg text-neutral-dark font-light">{item.text}</p>
+                  </div>
+                ))}
+              </div>
+              
+              <div className={`transition-all duration-1000 delay-700 transform ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+                <Button 
+                  variant="outline" 
+                  size="lg"
+                  className="group"
+                  onClick={scrollToAbout}
+                >
+                  <span>Découvrir</span>
+                  <ArrowDown size={16} className="ml-2 transition-transform group-hover:translate-y-1" />
+                </Button>
+              </div>
+            </div>
+            
+            {/* Product image */}
+            <div className={`flex justify-center transition-all duration-1000 delay-200 transform ${heroVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+              <div className="relative">
+                <div className="absolute -inset-4 bg-white/50 rounded-full blur-xl"></div>
+                <img 
+                  src="https://images.unsplash.com/photo-1523362628745-0c100150b504?q=80&w=1336&auto=format&fit=crop"
+                  alt="Filtre ULTRA 7Eau - ultrafiltration 0,1 micron, débit 7L/min"
+                  className="w-full max-w-md mx-auto relative z-10 drop-shadow-xl"
+                />
+                <div className="absolute top-1/3 right-0 text-water-dark font-thin text-2xl tracking-[0.3em] opacity-60 transform -rotate-90">ULTRA</div>
+              </div>
+            </div>
           </div>
 
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-float">
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
             <button
-              className="text-white flex flex-col items-center"
-              onClick={() => {
-                const element = document.getElementById("about");
-                if (element) {
-                  element.scrollIntoView({ behavior: "smooth" });
-                }
-              }}
+              className="text-water-dark flex flex-col items-center opacity-70 hover:opacity-100 transition-opacity"
+              onClick={scrollToAbout}
             >
-              <span className="mb-2">Découvrir</span>
-              <ArrowDown size={24} />
+              <span className="text-sm font-light mb-2">Découvrir</span>
+              <ArrowDown size={20} />
             </button>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* About Section */}
       <Section id="about" background="white">

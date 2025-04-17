@@ -17,12 +17,12 @@ const FeatureCard = ({
 }: FeatureCardProps) => {
   return (
     <div className={cn(
-      "bg-white p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg hover:translate-y-[-5px]",
+      "bg-white/80 backdrop-blur-sm p-6 rounded-lg shadow-sm transition-all duration-300 hover:shadow-md hover:translate-y-[-3px]",
       className
     )}>
       <div className="mb-4 text-water text-3xl">{icon}</div>
-      <h3 className="text-xl font-bold mb-2">{title}</h3>
-      <p className="text-gray-600">{description}</p>
+      <h3 className="text-xl font-normal mb-2">{title}</h3>
+      <p className="text-gray-600 font-light">{description}</p>
     </div>
   );
 };

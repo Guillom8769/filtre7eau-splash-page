@@ -19,16 +19,16 @@ const Button = ({
   size = "md",
   type = "button",
 }: ButtonProps) => {
-  const baseStyles = "font-medium rounded-md transition-all duration-200 inline-flex items-center justify-center";
+  const baseStyles = "font-light tracking-wide rounded-md transition-all duration-300 inline-flex items-center justify-center";
   
   const variantStyles = {
-    primary: "bg-water text-white hover:bg-water-dark shadow-md hover:shadow-lg",
-    secondary: "bg-eco text-white hover:bg-eco-dark shadow-md hover:shadow-lg",
-    outline: "bg-transparent border-2 border-water text-water hover:bg-water hover:text-white"
+    primary: "bg-water text-white hover:bg-water-dark shadow-sm hover:shadow-md",
+    secondary: "bg-eco text-white hover:bg-eco-dark shadow-sm hover:shadow-md",
+    outline: "bg-transparent border border-water text-water hover:bg-water/5"
   };
   
   const sizeStyles = {
-    sm: "text-sm px-4 py-2",
+    sm: "text-sm px-5 py-2",
     md: "text-base px-6 py-3",
     lg: "text-lg px-8 py-4"
   };
