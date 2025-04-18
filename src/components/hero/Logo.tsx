@@ -1,11 +1,14 @@
 
-import { Droplet } from "lucide-react";
+import React from 'react';
 
 const Logo = () => {
   return (
     <div className="flex items-center space-x-2">
-      <Droplet className="w-6 h-6 text-water" />
-      <span className="text-xl font-light tracking-wide">7Eau</span>
+      <img 
+        src="/lovable-uploads/ee9010ef-7f48-49eb-b77f-5616173c713a.png" 
+        alt="7Eau Logo" 
+        className="h-8 w-auto" 
+      />
     </div>
   );
 };
