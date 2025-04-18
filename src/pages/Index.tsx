@@ -9,6 +9,7 @@ import WaterQualityCheck from "@/components/WaterQualityCheck";
 import FeatureCard from "@/components/FeatureCard";
 import Accordion from "@/components/Accordion";
 import HeroSection from "@/components/hero/HeroSection";
+import ExpertiseSection from "@/components/ExpertiseSection";
 
 const Index = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -144,72 +145,10 @@ const Index = () => {
   return (
     <div className="relative">
       <HeroSection />
-      {/* Navigation - Apple-like minimal sticky header */}
-      <header 
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled ? "bg-white/90 backdrop-blur-md shadow-sm py-3" : "bg-transparent py-5"
-        }`}
-      >
-        <div className="container mx-auto px-4 flex items-center justify-between">
-          <div className="flex items-center">
-            <Droplet className="text-water mr-2" size={24} />
-            <span className={`font-light text-xl tracking-wider ${isScrolled ? "text-water" : "text-white"}`}>7Eau</span>
-          </div>
-          <Button 
-            variant={isScrolled ? "primary" : "outline"} 
-            size="sm"
-            onClick={() => {
-              const element = document.getElementById("buy");
-              if (element) {
-                element.scrollIntoView({ behavior: "smooth" });
-              }
-            }}
-          >
-            Commander
-          </Button>
-        </div>
-      </header>
-
+      
       {/* About Section */}
       <Section id="about" background="white">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <div className="animate-slide-in">
-            <h2 className="text-3xl font-bold mb-4">
-              De l'expertise industrielle à votre foyer
-            </h2>
-            <p className="text-gray-600 mb-4">
-              Développé initialement pour des besoins industriels exigeants, Filtre7Eau 
-              apporte désormais cette technologie de pointe directement dans votre cuisine, 
-              sans compromis sur la qualité.
-            </p>
-            <p className="text-gray-600 mb-4">
-              Notre mission est simple : vous offrir une eau plus pure, sans les contaminants modernes 
-              comme les microplastiques, tout en préservant les minéraux essentiels et le goût naturel 
-              de votre eau.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 mt-8">
-              <div className="flex items-center gap-2 text-eco-dark">
-                <Leaf size={20} />
-                <span>Écologique</span>
-              </div>
-              <div className="flex items-center gap-2 text-water">
-                <Heart size={20} />
-                <span>Santé optimale</span>
-              </div>
-              <div className="flex items-center gap-2 text-water-dark">
-                <Medal size={20} />
-                <span>Qualité certifiée</span>
-              </div>
-            </div>
-          </div>
-          <div className="rounded-lg overflow-hidden shadow-lg animate-slide-in">
-            <img 
-              src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
-              alt="Eau pure" 
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
+        <ExpertiseSection />
       </Section>
 
       {/* Product Features Section */}
