@@ -4,18 +4,18 @@ import { motion } from "framer-motion";
 const ProductHighlight = () => {
   return (
     <div className="relative">
-      {/* Halo derrière le produit */}
-      <div className="absolute inset-0 bg-gradient-radial from-water-light/20 to-transparent rounded-full blur-2xl" />
+      {/* Halo subtil derrière le produit */}
+      <div className="absolute inset-0 bg-gradient-to-br from-water-light/10 to-water-light/30 rounded-full blur-2xl" />
       
-      {/* Image du produit */}
+      {/* Image du produit ULTRA */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="relative"
+        className="relative z-10"
       >
         <img
-          src="https://images.unsplash.com/photo-1523362628745-0c100150b504?q=80&w=1336&auto=format&fit=crop"
+          src="/lovable-uploads/d7a7f6a1-302d-4c94-8f64-1fe7204e3e37.png"
           alt="Filtre ULTRA 7Eau – ultrafiltration 0,1 micron, 7 L/min"
           className="w-full max-w-lg mx-auto drop-shadow-xl"
         />
