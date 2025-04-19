@@ -1,15 +1,15 @@
 
-import { TeaCup, Coffee, CupSoda, LeafyGreen, PawPrint, Utensils, Carrot, Sport, Droplet, Recycle } from "lucide-react";
+import { Coffee, CupSoda, LeafyGreen, PawPrint, Utensils, Carrot, Droplet, Recycle, Cup, Volleyball } from "lucide-react";
 
 const usages = [
-  { icon: TeaCup, label: "Thé" },
+  { icon: Cup, label: "Thé" },
   { icon: Coffee, label: "Café" },
   { icon: CupSoda, label: "Sirop" },
   { icon: LeafyGreen, label: "Plantes" },
   { icon: PawPrint, label: "Animaux" },
   { icon: Utensils, label: "Vaisselle" },
   { icon: Carrot, label: "Aliments" },
-  { icon: Sport, label: "Sport" },
+  { icon: Volleyball, label: "Sport" },
   { icon: Droplet, label: "Hydratation" },
   { icon: Recycle, label: "Réutilisation" },
 ];
