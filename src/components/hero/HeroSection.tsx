@@ -1,22 +1,14 @@
 
-import { ArrowDown } from "lucide-react";
 import { motion } from "framer-motion";
-import ProductHighlight from "./ProductHighlight";
-import FeaturesList from "./FeaturesList";
 import Logo from "./Logo";
+import UsageIcons from "./UsageIcons";
+import KeyFigures from "./KeyFigures";
 
 const HeroSection = () => {
-  const scrollToNextSection = () => {
-    const element = document.getElementById("scroll2");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <section className="relative min-h-screen overflow-hidden bg-gradient-to-b from-white via-water-light/5 to-water-light/10">
       {/* Texture d'eau subtile */}
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1580437082423-4f0e58a2d413?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80')] opacity-[0.02] mix-blend-overlay" />
+      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?ixlib=rb-4.0.3')] opacity-[0.02] mix-blend-overlay" />
       
       {/* Logo */}
       <div className="absolute top-8 left-8 z-10">
@@ -30,37 +22,57 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="flex flex-col items-start space-y-8"
+            className="flex flex-col items-start"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight leading-tight">
-              L'excellence de l'industrie dans votre cuisine
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight leading-tight mb-6">
+              Comment aimez-vous votre eau ?
             </h1>
             
-            <FeaturesList />
+            <p className="text-gray-600 text-lg leading-relaxed mb-8">
+              Le filtre sous évier ULTRA CARBON 01 s'installe facilement sous votre évier, 
+              sans travaux, et offre une eau du robinet pure grâce à une filtration de qualité 
+              industrielle. Bénéfique pour votre santé et votre confort d'usage, cette eau 
+              filtrée vous accompagne au quotidien.
+            </p>
 
-            <button
-              onClick={scrollToNextSection}
-              className="group flex items-center space-x-2 text-water hover:text-water-dark transition-colors"
-            >
-              <span className="font-light">Découvrir</span>
-              <ArrowDown className="w-4 h-4 transition-transform group-hover:translate-y-1" />
-            </button>
+            <UsageIcons />
           </motion.div>
 
           {/* Image produit */}
-          <ProductHighlight />
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            className="relative"
+          >
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-water-light/10 to-water-light/30 rounded-full blur-2xl" />
+              <img
+                src="/lovable-uploads/d7a7f6a1-302d-4c94-8f64-1fe7204e3e37.png"
+                alt="Filtre sous évier ULTRA CARBON 01 – système de filtration d'eau pure à installer sous l'évier"
+                className="relative z-10 w-full transform rotate-[-15deg] hover:rotate-0 transition-transform duration-500"
+              />
+            </div>
+          </motion.div>
         </div>
-      </div>
 
-      {/* Indicateur de scroll */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-      >
-        <ArrowDown className="w-6 h-6 text-water/50 animate-bounce" />
-      </motion.div>
+        {/* Chiffres clés */}
+        <KeyFigures />
+
+        {/* Slogan final */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1 }}
+          className="text-center mt-16"
+        >
+          <p className="text-2xl font-light text-gray-800 leading-relaxed">
+            La filtration industrielle, chez vous.
+            <br />
+            <span className="text-water">Sans compromis. Sans contrainte.</span>
+          </p>
+        </motion.div>
+      </div>
     </section>
   );
 };
