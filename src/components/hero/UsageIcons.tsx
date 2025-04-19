@@ -1,8 +1,8 @@
 
-import { Mug, Coffee, CupSoda, LeafyGreen, PawPrint, Utensils, Carrot, Droplet, Recycle, Volleyball } from "lucide-react";
+import { Coffee, CupSoda, LeafyGreen, PawPrint, Utensils, Carrot, Droplet, Recycle, Volleyball } from "lucide-react";
 
 const usages = [
-  { icon: Mug, label: "Thé" },
+  { icon: Coffee, label: "Thé" },
   { icon: Coffee, label: "Café" },
   { icon: CupSoda, label: "Sirop" },
   { icon: LeafyGreen, label: "Plantes" },
