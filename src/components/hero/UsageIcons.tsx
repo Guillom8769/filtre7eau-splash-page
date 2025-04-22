@@ -16,13 +16,13 @@ const usages = [
 
 const UsageIcons = () => {
   return (
-    <div className="grid grid-cols-5 md:grid-cols-10 gap-4 mt-8">
+    <div className="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-10 gap-8">
       {usages.map(({ icon: Icon, label }) => (
-        <div key={label} className="flex flex-col items-center gap-2">
-          <div className="w-12 h-12 rounded-full bg-water/5 flex items-center justify-center">
-            <Icon className="w-6 h-6 text-water" />
+        <div key={label} className="flex flex-col items-center gap-3">
+          <div className="w-16 h-16 rounded-full bg-water/5 flex items-center justify-center transform hover:scale-110 transition-transform">
+            <Icon className="w-8 h-8 text-water" />
           </div>
-          <span className="text-xs text-gray-600">{label}</span>
+          <span className="text-sm text-gray-600">{label}</span>
         </div>
       ))}
     </div>
