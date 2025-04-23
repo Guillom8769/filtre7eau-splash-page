@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { useRef } from "react";
@@ -63,7 +64,7 @@ const HeroSection = () => {
           >
             <div className="absolute inset-0 bg-gradient-to-br from-water-light/10 to-water-light/30 rounded-full blur-2xl" />
             <img
-              src="/lovable-uploads/d7a7f6a1-302d-4c94-8f64-1fe7204e3e37.png"
+              src="/lovable-uploads/5702c205-2257-4124-96cb-eefe1edf6d18.png"
               alt="Filtre sous évier ULTRA CARBON 01 – système de filtration d'eau pure à installer sous l'évier"
               className="relative z-10 w-full transform -rotate-15 hover:rotate-0 transition-transform duration-500 drop-shadow-2xl"
             />
