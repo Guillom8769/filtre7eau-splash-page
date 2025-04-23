@@ -1,7 +1,5 @@
-
 import { 
   Droplet, 
-  Smile, 
   Shield, 
   Wrench, 
   Timer, 
@@ -188,9 +186,9 @@ const Index = () => {
           <div className="flex flex-col items-center justify-center order-2 md:order-1">
             <div className="relative w-full flex justify-center mb-7">
               <div className="bg-water/10 rounded-2xl flex items-center justify-center p-5 shadow-lg max-w-xs w-full">
-                <Faucet className="text-water mr-3" size={44} />
+                <Droplet className="text-water mr-3" size={44} />
                 <span className="text-2xl font-extrabold text-water drop-shadow select-none animate-slide-in">
-                  À la tienne ! 
+                  À la tienne ! 
                 </span>
               </div>
             </div>
