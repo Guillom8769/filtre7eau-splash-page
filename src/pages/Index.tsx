@@ -1,7 +1,7 @@
+
 import { 
   Droplet, 
   Smile, 
-  Faucet, 
   Shield, 
   Wrench, 
   Timer, 
