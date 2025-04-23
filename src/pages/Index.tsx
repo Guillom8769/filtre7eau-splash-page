@@ -201,13 +201,27 @@ const Index = () => {
           <div>
             <h2 className="text-3xl font-bold mb-5">Une association engagée</h2>
             <p className="text-gray-700 text-lg mb-6">
-              Au-delà du produit, 7Eau est aussi une association qui finance des projets concrets pour l&apos;accès à l&apos;eau potable, la protection de l&apos;environnement et la sensibilisation. Chaque filtre UltraZéro vendu contribue directement à ces actions sur le terrain. Par exemple, vos achats aident à installer des points d&apos;eau dans des communautés qui en manquent, à nettoyer des rivières ou à organiser des ateliers d&apos;éducation à l&apos;environnement.
+              Chez 7Eau, notre engagement ne s'arrête pas au filtre UltraZéro : nous avons créé une association indépendante pour faire vivre notre conviction — que chacun a le droit à une eau transparente, saine et partagée. Portée par les deux fondateurs, elle fédère une communauté de citoyens, d'experts et de passionnés autour d'actions concrètes : collecte participative de données, sensibilisation, développement d'outils innovants et durables. Financée en grande partie par les bénéfices de Filtre7Eau, elle garantit une totale transparence sur l'utilisation des fonds et l'impact de chaque initiative.
             </p>
-            <div className="bg-sky-50 rounded-xl border border-sky-200 px-5 py-4 max-w-xl">
-              <span className="font-semibold text-sky-600">
-                La transparence nous tient à cœur&nbsp;: <span className="font-normal">nous partageons avec vous l&apos;utilisation des fonds et l&apos;impact réel de chaque projet soutenu.</span>
-              </span>
-            </div>
+            <a 
+              href="#" 
+              className="text-water hover:text-water-dark font-semibold inline-flex items-center gap-2 group"
+            >
+              En savoir plus sur l'association 7Eau
+              <svg 
+                className="w-4 h-4 transform transition-transform group-hover:translate-x-1" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke="currentColor"
+              >
+                <path 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  strokeWidth={2} 
+                  d="M9 5l7 7-7 7" 
+                />
+              </svg>
+            </a>
           </div>
           <div>
             <div className="bg-white rounded-2xl shadow-lg p-6 min-h-[160px] flex items-start">
