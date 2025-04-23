@@ -18,6 +18,7 @@ import WaterQualityCheck from "@/components/WaterQualityCheck";
 import FeatureCard from "@/components/FeatureCard";
 import Accordion from "@/components/Accordion";
 import HeroSection from "@/components/hero/HeroSection";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 const Index = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -105,78 +106,80 @@ const Index = () => {
     {
       title: "Que filtre exactement mon Filtre UltraZéro ?",
       content: (
-        <div className="space-y-6">
-          <div>
-            <h4 className="font-semibold mb-3">La microfiltration 0,1 µm</h4>
-            <ul className="space-y-2">
-              <li className="flex items-center gap-2">
-                <span role="img" aria-label="main">✋</span>
-                Bactéries (E. coli, Salmonella…)
-              </li>
-              <li className="flex items-center gap-2">
-                <span role="img" aria-label="microbe">🦠</span>
-                Parasites (kystes de Giardia, Cryptosporidium…)
-              </li>
-              <li className="flex items-center gap-2">
-                <span role="img" aria-label="brume">🌫️</span>
-                Microplastiques et particules (sédiments, limon, rouille…)
-              </li>
-              <li className="flex items-center gap-2">
-                <span role="img" aria-label="goutte">💧</span>
-                Turbidité et impuretés physiques (&gt; 0,1 µm)
-              </li>
-            </ul>
-          </div>
+        <ScrollArea className="h-[350px] pr-4">
+          <div className="space-y-6">
+            <div>
+              <h4 className="font-semibold mb-3">La microfiltration 0,1 µm</h4>
+              <ul className="space-y-2">
+                <li className="flex items-center gap-2">
+                  <span role="img" aria-label="main">✋</span>
+                  Bactéries (E. coli, Salmonella…)
+                </li>
+                <li className="flex items-center gap-2">
+                  <span role="img" aria-label="microbe">🦠</span>
+                  Parasites (kystes de Giardia, Cryptosporidium…)
+                </li>
+                <li className="flex items-center gap-2">
+                  <span role="img" aria-label="brume">🌫️</span>
+                  Microplastiques et particules (sédiments, limon, rouille…)
+                </li>
+                <li className="flex items-center gap-2">
+                  <span role="img" aria-label="goutte">💧</span>
+                  Turbidité et impuretés physiques (&gt; 0,1 µm)
+                </li>
+              </ul>
+            </div>
 
-          <div>
-            <h4 className="font-semibold mb-3">Le charbon actif naturel</h4>
-            <ul className="space-y-2">
-              <li className="flex items-center gap-2">
-                <span role="img" aria-label="robinet">🚰</span>
-                Chlore, goût et odeurs de javel
-              </li>
-              <li className="flex items-center gap-2">
-                <span role="img" aria-label="feuille">🌱</span>
-                Pesticides et solvants (traces de produits agricoles)
-              </li>
-              <li className="flex items-center gap-2">
-                <span role="img" aria-label="tube">🧪</span>
-                Micropolluants organiques (résidus de médicaments, hormones, PFAS longue chaîne…)
-              </li>
-              <li className="flex items-center gap-2">
-                <span role="img" aria-label="usine">🏭</span>
-                Certains métaux lourds (plomb, mercure…)
-              </li>
-              <li className="flex items-center gap-2">
-                <span role="img" aria-label="feuille">🍃</span>
-                Composés chimiques responsables du goût désagréable
-              </li>
-            </ul>
-          </div>
+            <div>
+              <h4 className="font-semibold mb-3">Le charbon actif naturel</h4>
+              <ul className="space-y-2">
+                <li className="flex items-center gap-2">
+                  <span role="img" aria-label="robinet">🚰</span>
+                  Chlore, goût et odeurs de javel
+                </li>
+                <li className="flex items-center gap-2">
+                  <span role="img" aria-label="feuille">🌱</span>
+                  Pesticides et solvants (traces de produits agricoles)
+                </li>
+                <li className="flex items-center gap-2">
+                  <span role="img" aria-label="tube">🧪</span>
+                  Micropolluants organiques (résidus de médicaments, hormones, PFAS longue chaîne…)
+                </li>
+                <li className="flex items-center gap-2">
+                  <span role="img" aria-label="usine">🏭</span>
+                  Certains métaux lourds (plomb, mercure…)
+                </li>
+                <li className="flex items-center gap-2">
+                  <span role="img" aria-label="feuille">🍃</span>
+                  Composés chimiques responsables du goût désagréable
+                </li>
+              </ul>
+            </div>
 
-          <div>
-            <h4 className="font-semibold mb-3">
-              <span role="img" aria-label="stop" className="mr-2">🛑</span>
-              Ce qu&apos;il ne filtre pas
-            </h4>
-            <ul className="list-disc ml-5 space-y-1 text-gray-600">
-              <li>Les virus (trop petits pour 0,1 µm)</li>
-              <li>Les sels dissous et minéraux (calcaire, nitrates, fluor…)</li>
-              <li>Les bactéries colonisatrices si le filtre n&apos;est pas changé à temps</li>
-            </ul>
-          </div>
+            <div>
+              <h4 className="font-semibold mb-3">
+                <span role="img" aria-label="stop" className="mr-2">🛑</span>
+                Ce qu&apos;il ne filtre pas
+              </h4>
+              <ul className="list-disc ml-5 space-y-1 text-gray-600">
+                <li>Les virus (trop petits pour 0,1 µm)</li>
+                <li>Les sels dissous et minéraux (calcaire, nitrates, fluor…)</li>
+                <li>Les bactéries colonisatrices si le filtre n&apos;est pas changé à temps</li>
+              </ul>
+            </div>
 
-          <div className="mt-4 pt-4 border-t border-gray-200">
-            <h4 className="font-semibold mb-2">Sources</h4>
-            <ul className="list-disc ml-5 space-y-1 text-sm text-gray-600">
-              <li>Centers for Disease Control and Prevention (CDC), "Microfiltration of Drinking Water," CDC Water Treatment Technologies, 2018.</li>
-              <li>World Health Organization (WHO), Guidelines for Drinking-water Quality, 4ᵉ édition, 2017.</li>
-              <li>NSF International, NSF/ANSI Standard 42: Drinking Water Treatment Units—Aesthetic Effects, 2019.</li>
-              <li>ANSES (Agence nationale de sécurité sanitaire), Rapport sur les techniques de traitement de l&apos;eau potable, 2019.</li>
-              <li>Water Research, D. Shukla et al., "Removal of microplastics by membrane filtration: A review," Water Research, vol. 164, pp. 114–126, 2019.</li>
-            </ul>
+            <div className="mt-4 pt-4 border-t border-gray-200">
+              <h4 className="font-semibold mb-2">Sources</h4>
+              <ul className="list-disc ml-5 space-y-1 text-sm text-gray-600">
+                <li>Centers for Disease Control and Prevention (CDC), "Microfiltration of Drinking Water," CDC Water Treatment Technologies, 2018.</li>
+                <li>World Health Organization (WHO), Guidelines for Drinking-water Quality, 4ᵉ édition, 2017.</li>
+                <li>NSF International, NSF/ANSI Standard 42: Drinking Water Treatment Units—Aesthetic Effects, 2019.</li>
+                <li>ANSES (Agence nationale de sécurité sanitaire), Rapport sur les techniques de traitement de l&apos;eau potable, 2019.</li>
+                <li>Water Research, D. Shukla et al., "Removal of microplastics by membrane filtration: A review," Water Research, vol. 164, pp. 114–126, 2019.</li>
+              </ul>
+            </div>
           </div>
-        </div>
+        </ScrollArea>
       ),
     },
     {
