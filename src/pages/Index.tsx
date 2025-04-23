@@ -1,4 +1,15 @@
-import { Droplet, Smile, Faucet } from "lucide-react";
+import { 
+  Droplet, 
+  Smile, 
+  Faucet, 
+  Shield, 
+  Wrench, 
+  Timer, 
+  Leaf, 
+  Medal, 
+  Star, 
+  Send 
+} from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import Button from "@/components/Button";
 import Section from "@/components/Section";
