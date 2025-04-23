@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { useRef } from "react";
@@ -8,10 +7,6 @@ import KeyFigures from "./KeyFigures";
 
 const HeroSection = () => {
   const secondScreenRef = useRef<HTMLDivElement>(null);
-
-  const scrollToSecondScreen = () => {
-    secondScreenRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-white via-water-light/5 to-water-light/10">
@@ -74,18 +69,6 @@ const HeroSection = () => {
             />
           </motion.div>
         </div>
-
-        {/* Scroll indicator */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.4, duration: 0.8 }}
-          className="absolute bottom-12 left-1/2 transform -translate-x-1/2 flex flex-col items-center cursor-pointer"
-          onClick={scrollToSecondScreen}
-        >
-          <span className="text-gray-500 mb-2">Découvrir les avantages</span>
-          <ChevronDown className="text-water animate-bounce" />
-        </motion.div>
       </div>
 
       {/* DEUXIÈME ÉCRAN */}
