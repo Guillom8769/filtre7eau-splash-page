@@ -1,4 +1,4 @@
-import { ArrowDown, Droplet, Medal, Leaf, Timer, Heart, Shield, Wrench, Star, Send, BadgeCheck } from "lucide-react";
+import { Droplet, Smile, Faucet } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import Button from "@/components/Button";
 import Section from "@/components/Section";
@@ -144,7 +144,7 @@ const Index = () => {
   return (
     <div className="relative">
       <HeroSection />
-      {/* Navigation - Apple-like minimal sticky header */}
+      {/* Navigation */}
       <header 
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled ? "bg-white/90 backdrop-blur-md shadow-sm py-3" : "bg-transparent py-5"
@@ -170,98 +170,76 @@ const Index = () => {
         </div>
       </header>
 
-      {/* About Section */}
+      {/* ====== NOUVELLE SECTION ABOUT : "Et l’eau du robinet, avec le sourire…" ====== */}
       <Section id="about" background="white">
-        {/* Slide 1 - Une aventure humaine */}
-        <section className="mb-20 grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-3xl font-bold mb-4">Une aventure humaine</h2>
-            <p className="text-gray-700 text-lg mb-4">
-              C’est avant tout une aventure humaine. Lorsque nos deux co-fondateurs se sont rencontrés, ils ont découvert une passion commune pour l’eau, la planète et le bien-être de chacun.
-              Animés par la même envie d’agir concrètement, ils ont décidé d’unir leurs forces pour créer un produit aussi utile que durable.
-              C’est ainsi qu’est né UltraZéro, un filtre à eau nouvelle génération qui incarne leur vision d’une innovation au service du quotidien et de l’environnement.
-            </p>
-          </div>
-          <div className="flex items-center justify-center">
-            <img
-              src="/images/founders.jpg"
-              alt="Les fondateurs de 7Eau"
-              className="rounded-2xl object-cover w-full h-72 shadow-lg"
-              style={{ maxWidth: 380 }}
-            />
-          </div>
-        </section>
-        {/* Slide 2 - Une association engagée */}
-        <section className="mb-20 grid md:grid-cols-2 gap-12 items-center">
-          <div className="order-2 md:order-1">
-            <h2 className="text-3xl font-bold mb-4">Une association engagée</h2>
-            <p className="text-gray-700 text-lg mb-4">
-              Au-delà du produit, 7Eau est aussi une association qui finance des projets concrets pour l’accès à l’eau potable, la protection de l’environnement et la sensibilisation.
-              Chaque filtre UltraZéro vendu contribue directement à ces actions sur le terrain. 
-              Par exemple, vos achats aident à installer des points d’eau dans des communautés qui en manquent, à nettoyer des rivières ou à organiser des ateliers d’éducation à l’environnement.
-            </p>
-            <div className="bg-white p-6 rounded-xl shadow border mt-2">
-              <p className="text-water font-semibold">
-                La transparence nous tient à cœur : nous partageons avec vous l’utilisation des fonds et l’impact réel de chaque projet soutenu.
-              </p>
+        <div className="grid md:grid-cols-2 gap-12 items-center pt-6">
+          {/* Visuel typographique/fun */}
+          <div className="flex flex-col items-center justify-center order-2 md:order-1">
+            <div className="relative w-full flex justify-center mb-7">
+              <div className="bg-water/10 rounded-2xl flex items-center justify-center p-5 shadow-lg max-w-xs w-full">
+                <Faucet className="text-water mr-3" size={44} />
+                <span className="text-2xl font-extrabold text-water drop-shadow select-none animate-slide-in">
+                  À la tienne ! 
+                </span>
+              </div>
+            </div>
+            <div className="mt-5 flex flex-wrap gap-3 justify-center">
+              {/* Expressions visuelles - typo créative */}
+              {[
+                "Château La Pompe",
+                "Ratafia de grenouille",
+                "Pousse moulin",
+                "Sirop de parapluie",
+                "Anisette de barbillon",
+                "Pinard de cantonnier",
+                "Clos des escargots",
+                "Vin du Château la Fontaine",
+                "Anisette de Mme Wallace"
+              ].map((expression, idx) => (
+                <span
+                  key={expression}
+                  className={`rounded-full px-4 py-1 text-sm font-semibold tracking-tight
+                    ${
+                      idx % 2 === 0
+                        ? "bg-water/10 text-water"
+                        : "bg-eco/10 text-eco"
+                    }
+                    border border-water/5 shadow-sm animate-fade-in`}
+                >
+                  {expression}
+                </span>
+              ))}
             </div>
           </div>
-          <div className="order-1 md:order-2 flex items-center justify-center">
-            <img
-              src="/images/impact.jpg"
-              alt="Impact solidaire 7Eau"
-              className="rounded-2xl object-cover w-full h-72 shadow-lg"
-              style={{ maxWidth: 380 }}
-            />
-          </div>
-        </section>
-        {/* Slide 3 - La filtration sans compromis */}
-        <section className="mb-20 grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-3xl font-bold mb-4">La filtration sans compromis</h2>
-            <p className="text-gray-700 text-lg mb-3">
-              UltraZéro, c’est la filtration industrielle qui s’invite chez vous. Fruit d’un savoir-faire professionnel, ce filtre nouvelle génération offre enfin une eau d’une pureté exceptionnelle au quotidien.
+          {/* Bloc texte explicatif, call to action humour */}
+          <div className="order-1 md:order-2 flex flex-col justify-center">
+            <h2 className="text-3xl font-bold mb-5">Et l’eau du robinet, avec le sourire…</h2>
+            <p className="text-gray-700 text-lg mb-5">
+              Chez 7Eau, on aime bien ne pas se prendre trop au sérieux. Il nous arrive même de donner des petits surnoms à l’eau du robinet : 
             </p>
-            <ul className="mb-2 ml-0 pl-0">
-              <li className="mb-1 flex items-center gap-2">
-                <Droplet className="text-water w-5 h-5" />
-                <span>Débit ultra-rapide : jusqu’à 7 L/min</span>
-              </li>
-              <li className="mb-1 flex items-center gap-2">
-                <Shield className="text-water w-5 h-5" />
-                <span>Filtration ultra-fine : 0,1 micron (sans impuretés)</span>
-              </li>
-              <li className="mb-1 flex items-center gap-2">
-                <Leaf className="text-eco w-5 h-5" />
-                <span>Cartouche 100% naturelle (charbon actif)</span>
-              </li>
+            <ul className="mb-3 ml-4 list-disc text-gray-600 text-base">
+              <li>'L'eau de distribution, l'eau courante, la flotte…'</li>
             </ul>
-            <p className="text-gray-700 text-lg">
-              Installation facile en moins de 30 minutes (sans travaux) – une eau saine, sans contrainte ni compromis sur la qualité ou le style.
+            <p className="text-gray-700 mb-5">
+              ...mais aussi plein d'autres noms rigolos partagés par nos clients. 
             </p>
-            {/* Avantages visuels - format "chips" */}
-            <div className="flex flex-wrap gap-4 mt-6">
-              <span className="inline-flex items-center gap-2 px-4 py-1 rounded-full border text-sm text-green-700 border-green-200 bg-green-50">
-                <Leaf className="w-4 h-4 text-green-700" /> Écologique
-              </span>
-              <span className="inline-flex items-center gap-2 px-4 py-1 rounded-full border text-sm text-blue-700 border-blue-200 bg-blue-50">
-                <Heart className="w-4 h-4 text-blue-600" /> Santé optimale
-              </span>
-              <span className="inline-flex items-center gap-2 px-4 py-1 rounded-full border text-sm text-water border-water/20 bg-water/10">
-                <BadgeCheck className="w-4 h-4 text-water" /> Qualité certifiée
-              </span>
-            </div>
+            <p className="text-water font-semibold mb-6">
+              Vous en connaissez d’autres ? <br className="sm:hidden" />
+              <span className="font-normal">Proposez-les-nous et participez à la touche d’humour !</span>
+            </p>
+            {/* SUGGESTION: formulaire input mini */}
+            <form className="flex gap-2" onSubmit={e => {e.preventDefault(); alert("Merci pour votre suggestion !");}}>
+              <input
+                type="text"
+                placeholder="Votre surnom pour l’eau…"
+                className="flex-1 px-4 py-2 rounded-l-lg border border-water/30 focus:outline-none focus:ring-2 focus:ring-water text-base"
+              />
+              <Button variant="primary" type="submit" size="sm" className="rounded-r-lg">Envoyer</Button>
+            </form>
           </div>
-          <div className="flex items-center justify-center">
-            <img
-              src="/lovable-uploads/8b8cc8b7-1607-416a-b265-48c52b86a657.png"
-              alt="Océan, symbole d'eau pure et naturelle"
-              className="rounded-2xl object-cover w-full h-72 shadow-lg"
-              style={{ maxWidth: 420 }}
-            />
-          </div>
-        </section>
+        </div>
       </Section>
+      {/* ====== FIN NOUVELLE SECTION ABOUT ====== */}
 
       {/* Product Features Section */}
       <Section id="features" background="water">
@@ -535,7 +513,7 @@ const Index = () => {
                 </a>
                 <a href="#" className="text-water hover:text-water-dark">
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path fillRule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363-.416-2.427-.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.045-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.08c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clipRule="evenodd"></path>
+                    <path fillRule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363-.416-2.427-.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.045-1.064.218-1.791.465-2.427a4.902 4.902 0 01-1.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.08c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clipRule="evenodd"></path>
                   </svg>
                 </a>
                 <a href="#" className="text-water hover:text-water-dark">
