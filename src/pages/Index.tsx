@@ -247,6 +247,43 @@ const Index = () => {
             </form>
           </div>
         </div>
+        {/* ========== AJOUT "Une aventure humaine" et "Une association engagée" ========= */}
+        <div className="mt-20 grid md:grid-cols-2 gap-8">
+          <div>
+            <h2 className="text-3xl font-bold mb-5">Une aventure humaine</h2>
+            <p className="text-gray-700 text-lg">
+              C&apos;est avant tout une aventure humaine. Lorsque nos deux co-fondateurs se sont rencontrés, ils ont découvert une passion commune pour l&apos;eau, la planète et le bien-être de chacun. Animés par la même envie d&apos;agir concrètement, ils ont décidé d&apos;unir leurs forces pour créer un produit aussi utile que durable. C&apos;est ainsi qu&apos;est né UltraZéro, un filtre à eau nouvelle génération qui incarne leur vision d&apos;une innovation au service du quotidien et de l&apos;environnement.
+            </p>
+          </div>
+          <div>
+            <div className="bg-white rounded-2xl shadow-lg p-6 min-h-[160px] flex items-start">
+              <div>
+                <span className="font-semibold text-lg text-gray-800">Les fondateurs de 7Eau</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="mt-16 grid md:grid-cols-2 gap-8 items-start">
+          <div>
+            <h2 className="text-3xl font-bold mb-5">Une association engagée</h2>
+            <p className="text-gray-700 text-lg mb-6">
+              Au-delà du produit, 7Eau est aussi une association qui finance des projets concrets pour l&apos;accès à l&apos;eau potable, la protection de l&apos;environnement et la sensibilisation. Chaque filtre UltraZéro vendu contribue directement à ces actions sur le terrain. Par exemple, vos achats aident à installer des points d&apos;eau dans des communautés qui en manquent, à nettoyer des rivières ou à organiser des ateliers d&apos;éducation à l&apos;environnement.
+            </p>
+            <div className="bg-sky-50 rounded-xl border border-sky-200 px-5 py-4 max-w-xl">
+              <span className="font-semibold text-sky-600">
+                La transparence nous tient à cœur&nbsp;: <span className="font-normal">nous partageons avec vous l&apos;utilisation des fonds et l&apos;impact réel de chaque projet soutenu.</span>
+              </span>
+            </div>
+          </div>
+          <div>
+            <div className="bg-white rounded-2xl shadow-lg p-6 min-h-[160px] flex items-start">
+              <div>
+                <span className="font-semibold text-lg text-gray-800">Impact solidaire 7Eau</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* ================================================ */}
       </Section>
       {/* ====== FIN NOUVELLE SECTION ABOUT ====== */}
 
