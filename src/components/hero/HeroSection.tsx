@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { useRef } from "react";
@@ -85,8 +84,8 @@ const HeroSection = () => {
               className="relative z-10"
             >
               <img
-                src="/lovable-uploads/d7a7f6a1-302d-4c94-8f64-1fe7204e3e37.png"
-                alt="Filtre sous évier ULTRA CARBON 01 – filtration d'eau du robinet"
+                src="/lovable-uploads/49f98406-99e8-4d33-a164-9645775f200b.png"
+                alt="Filtre ULTRA CARBON 01 – filtration d'eau du robinet"
                 className="w-full max-w-lg mx-auto drop-shadow-2xl"
               />
             </motion.div>
