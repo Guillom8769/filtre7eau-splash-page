@@ -1,4 +1,4 @@
-import { ArrowDown, Droplet, Medal, Leaf, Timer, Heart, Shield, Wrench, Star, Send } from "lucide-react";
+import { ArrowDown, Droplet, Medal, Leaf, Timer, Heart, Shield, Wrench, Star, Send, BadgeCheck } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import Button from "@/components/Button";
 import Section from "@/components/Section";
@@ -172,44 +172,95 @@ const Index = () => {
 
       {/* About Section */}
       <Section id="about" background="white">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <div className="animate-slide-in">
-            <h2 className="text-3xl font-bold mb-4">
-              De l'expertise industrielle à votre foyer
-            </h2>
-            <p className="text-gray-600 mb-4">
-              Développé initialement pour des besoins industriels exigeants, Filtre7Eau 
-              apporte désormais cette technologie de pointe directement dans votre cuisine, 
-              sans compromis sur la qualité.
+        {/* Slide 1 - Une aventure humaine */}
+        <section className="mb-20 grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="text-3xl font-bold mb-4">Une aventure humaine</h2>
+            <p className="text-gray-700 text-lg mb-4">
+              C’est avant tout une aventure humaine. Lorsque nos deux co-fondateurs se sont rencontrés, ils ont découvert une passion commune pour l’eau, la planète et le bien-être de chacun.
+              Animés par la même envie d’agir concrètement, ils ont décidé d’unir leurs forces pour créer un produit aussi utile que durable.
+              C’est ainsi qu’est né UltraZéro, un filtre à eau nouvelle génération qui incarne leur vision d’une innovation au service du quotidien et de l’environnement.
             </p>
-            <p className="text-gray-600 mb-4">
-              Notre mission est simple : vous offrir une eau plus pure, sans les contaminants modernes 
-              comme les microplastiques, tout en préservant les minéraux essentiels et le goût naturel 
-              de votre eau.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 mt-8">
-              <div className="flex items-center gap-2 text-eco-dark">
-                <Leaf size={20} />
-                <span>Écologique</span>
-              </div>
-              <div className="flex items-center gap-2 text-water">
-                <Heart size={20} />
-                <span>Santé optimale</span>
-              </div>
-              <div className="flex items-center gap-2 text-water-dark">
-                <Medal size={20} />
-                <span>Qualité certifiée</span>
-              </div>
-            </div>
           </div>
-          <div className="rounded-lg overflow-hidden shadow-lg animate-slide-in">
-            <img 
-              src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
-              alt="Eau pure" 
-              className="w-full h-full object-cover"
+          <div className="flex items-center justify-center">
+            <img
+              src="/images/founders.jpg"
+              alt="Les fondateurs de 7Eau"
+              className="rounded-2xl object-cover w-full h-72 shadow-lg"
+              style={{ maxWidth: 380 }}
             />
           </div>
-        </div>
+        </section>
+        {/* Slide 2 - Une association engagée */}
+        <section className="mb-20 grid md:grid-cols-2 gap-12 items-center">
+          <div className="order-2 md:order-1">
+            <h2 className="text-3xl font-bold mb-4">Une association engagée</h2>
+            <p className="text-gray-700 text-lg mb-4">
+              Au-delà du produit, 7Eau est aussi une association qui finance des projets concrets pour l’accès à l’eau potable, la protection de l’environnement et la sensibilisation.
+              Chaque filtre UltraZéro vendu contribue directement à ces actions sur le terrain. 
+              Par exemple, vos achats aident à installer des points d’eau dans des communautés qui en manquent, à nettoyer des rivières ou à organiser des ateliers d’éducation à l’environnement.
+            </p>
+            <div className="bg-white p-6 rounded-xl shadow border mt-2">
+              <p className="text-water font-semibold">
+                La transparence nous tient à cœur : nous partageons avec vous l’utilisation des fonds et l’impact réel de chaque projet soutenu.
+              </p>
+            </div>
+          </div>
+          <div className="order-1 md:order-2 flex items-center justify-center">
+            <img
+              src="/images/impact.jpg"
+              alt="Impact solidaire 7Eau"
+              className="rounded-2xl object-cover w-full h-72 shadow-lg"
+              style={{ maxWidth: 380 }}
+            />
+          </div>
+        </section>
+        {/* Slide 3 - La filtration sans compromis */}
+        <section className="mb-20 grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="text-3xl font-bold mb-4">La filtration sans compromis</h2>
+            <p className="text-gray-700 text-lg mb-3">
+              UltraZéro, c’est la filtration industrielle qui s’invite chez vous. Fruit d’un savoir-faire professionnel, ce filtre nouvelle génération offre enfin une eau d’une pureté exceptionnelle au quotidien.
+            </p>
+            <ul className="mb-2 ml-0 pl-0">
+              <li className="mb-1 flex items-center gap-2">
+                <Droplet className="text-water w-5 h-5" />
+                <span>Débit ultra-rapide : jusqu’à 7 L/min</span>
+              </li>
+              <li className="mb-1 flex items-center gap-2">
+                <Shield className="text-water w-5 h-5" />
+                <span>Filtration ultra-fine : 0,1 micron (sans impuretés)</span>
+              </li>
+              <li className="mb-1 flex items-center gap-2">
+                <Leaf className="text-eco w-5 h-5" />
+                <span>Cartouche 100% naturelle (charbon actif)</span>
+              </li>
+            </ul>
+            <p className="text-gray-700 text-lg">
+              Installation facile en moins de 30 minutes (sans travaux) – une eau saine, sans contrainte ni compromis sur la qualité ou le style.
+            </p>
+            {/* Avantages visuels - format "chips" */}
+            <div className="flex flex-wrap gap-4 mt-6">
+              <span className="inline-flex items-center gap-2 px-4 py-1 rounded-full border text-sm text-green-700 border-green-200 bg-green-50">
+                <Leaf className="w-4 h-4 text-green-700" /> Écologique
+              </span>
+              <span className="inline-flex items-center gap-2 px-4 py-1 rounded-full border text-sm text-blue-700 border-blue-200 bg-blue-50">
+                <Heart className="w-4 h-4 text-blue-600" /> Santé optimale
+              </span>
+              <span className="inline-flex items-center gap-2 px-4 py-1 rounded-full border text-sm text-water border-water/20 bg-water/10">
+                <BadgeCheck className="w-4 h-4 text-water" /> Qualité certifiée
+              </span>
+            </div>
+          </div>
+          <div className="flex items-center justify-center">
+            <img
+              src="/lovable-uploads/8b8cc8b7-1607-416a-b265-48c52b86a657.png"
+              alt="Océan, symbole d'eau pure et naturelle"
+              className="rounded-2xl object-cover w-full h-72 shadow-lg"
+              style={{ maxWidth: 420 }}
+            />
+          </div>
+        </section>
       </Section>
 
       {/* Product Features Section */}
