@@ -225,7 +225,6 @@ const Index = () => {
       >
         <div className="container mx-auto px-4 flex items-center justify-between">
           <div className="flex items-center">
-            <Droplet className="text-water mr-2" size={24} />
             <span className={`font-light text-xl tracking-wider ${isScrolled ? "text-water" : "text-white"}`}>7Eau</span>
           </div>
           <Button 
