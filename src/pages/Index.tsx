@@ -1,3 +1,4 @@
+
 import { 
   Droplet, 
   Shield, 
@@ -19,6 +20,7 @@ import FeatureCard from "@/components/FeatureCard";
 import Accordion from "@/components/Accordion";
 import HeroSection from "@/components/hero/HeroSection";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import Logo from "@/components/hero/Logo";
 
 const Index = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -225,7 +227,7 @@ const Index = () => {
       >
         <div className="container mx-auto px-4 flex items-center justify-between">
           <div className="flex items-center">
-            <span className={`font-light text-xl tracking-wider ${isScrolled ? "text-water" : "text-white"}`}>7Eau</span>
+            <Logo variant={isScrolled ? "default" : "light"} />
           </div>
           <Button 
             variant={isScrolled ? "primary" : "outline"} 
