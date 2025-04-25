@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 
 const figures = [
@@ -27,9 +26,9 @@ const figures = [
     position: "bottom-10 right-0 md:-right-10"
   },
   {
-    number: "",
+    number: "100%",
     unit: "",
-    description: "",
+    description: "Antibactérien Ions Argent",
     position: "top-1/2 right-0 md:-right-20"
   }
 ];
