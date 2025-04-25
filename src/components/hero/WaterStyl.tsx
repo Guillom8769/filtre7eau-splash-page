@@ -19,9 +19,9 @@ const WaterStyl = () => {
           <div className="md:col-span-2 relative">
             {/* Mobile Heading (visible only on mobile) */}
             <div className="block md:hidden mb-8 text-center">
-              <h2 className="text-3xl font-light mb-2">Profitez simplement</h2>
+              <h2 className="text-3xl font-bold mb-2">Profitez simplement</h2>
               <p className="text-xl text-water font-medium">
-                Avec ULTRA CARBON 01, transformez votre robinet en source d'eau pure.
+                L'eau pure, sans effort.
               </p>
             </div>
             
@@ -72,18 +72,16 @@ const WaterStyl = () => {
           <div className="md:col-span-3">
             {/* Desktop Heading (visible only on desktop) */}
             <div className="hidden md:block mb-8">
-              <h2 className="text-4xl font-light mb-4">Profitez simplement</h2>
-              <p className="text-xl text-water font-medium">
-                Avec ULTRA CARBON 01, transformez votre robinet en source d'eau pure.
+              <h2 className="text-4xl font-bold mb-4">Profitez simplement</h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                L'eau pure, sans effort. Avec ULTRA CARBON 01, votre robinet devient une source d'eau purifiée ultra-rapide.
+                L'Ultra Carbon 01 rend tout plus simple au quotidien. Cuisine, boissons chaudes ou rafraîchissantes, vaisselle,
+                arrosage des plantes, hydratation des animaux de compagnie ou préparation sportive – l'eau filtrée est partout.
+              </p>
+              <p className="text-water italic mt-4">
+                Pure et riche en goût, elle vous accompagne sans plastique ni souci dans tous vos moments de vie.
               </p>
             </div>
-            
-            <p className="text-gray-600 mb-8 leading-relaxed">
-              Une installation sans travaux, une filtration de qualité industrielle, et surtout… 
-              la liberté de savourer chaque instant — que ce soit pour votre thé, vos repas, ou vos proches.
-              <br /><br />
-              <span className="italic text-water">Parce qu'une bonne eau, c'est celle qui simplifie la vie, au quotidien.</span>
-            </p>
             
             {/* Water Usage Grid */}
             <WaterUsageGrid selectedUsage={selectedUsage} onSelectUsage={setSelectedUsage} />
@@ -92,6 +90,20 @@ const WaterStyl = () => {
             <div className="mt-16">
               <KeyAdvantages />
             </div>
+
+            {/* Closing Tagline */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="mt-12 p-6 bg-water/5 rounded-xl border border-water/10"
+            >
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Conçu pour tous – familles actives, sportifs, jeunes couples, seniors, écolos ou amateurs de haute technologie –
+                ULTRA CARBON 01 s'adapte à votre style de vie. Découvrez la liberté d'une eau pure et généreuse, enfin à votre portée.
+              </p>
+            </motion.div>
           </div>
         </div>
       </div>
