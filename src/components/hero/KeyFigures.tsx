@@ -25,6 +25,12 @@ const figures = [
     unit: "min",
     description: "Installation sans travaux",
     position: "bottom-10 right-0 md:-right-10"
+  },
+  {
+    number: "",
+    unit: "",
+    description: "",
+    position: "top-1/2 right-0 md:-right-20"
   }
 ];
 
