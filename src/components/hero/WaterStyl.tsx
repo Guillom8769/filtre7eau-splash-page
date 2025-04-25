@@ -1,16 +1,11 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
-import { useIsMobile } from "@/hooks/use-mobile";
 import WaterUsageGrid from "./WaterUsageGrid";
 import KeyFigures from "./KeyFigures";
 import KeyAdvantages from "./KeyAdvantages";
 
 const WaterStyl = () => {
-  const isMobile = useIsMobile();
-  const [selectedUsage, setSelectedUsage] = useState(0);
-  
   return (
     <div className="min-h-screen flex flex-col justify-center py-12 md:py-24">
       <div className="container mx-auto px-4">
@@ -44,28 +39,6 @@ const WaterStyl = () => {
                 <KeyFigures />
               </div>
             </motion.div>
-            
-            {/* Mobile Key Figures Carousel (visible only on mobile) */}
-            {isMobile && (
-              <div className="mt-12">
-                <Carousel>
-                  <CarouselContent>
-                    {[
-                      { text: "7 L/min – Débit ultra-rapide" },
-                      { text: "0,1 µm – Filtration ultra-fine" },
-                      { text: "100 % – Charbon actif naturel" },
-                      { text: "30 min – Installation sans travaux" }
-                    ].map((figure, i) => (
-                      <CarouselItem key={i} className="basis-3/4 md:basis-1/2">
-                        <div className="bg-white/90 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-water/10 text-center">
-                          <p className="text-water font-medium">{figure.text}</p>
-                        </div>
-                      </CarouselItem>
-                    ))}
-                  </CarouselContent>
-                </Carousel>
-              </div>
-            )}
           </div>
           
           {/* Right Column - Content (60% on desktop) */}
@@ -84,7 +57,7 @@ const WaterStyl = () => {
             </div>
             
             {/* Water Usage Grid */}
-            <WaterUsageGrid selectedUsage={selectedUsage} onSelectUsage={setSelectedUsage} />
+            <WaterUsageGrid />
             
             {/* Key Advantages Card */}
             <div className="mt-16">
