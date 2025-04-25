@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 
 const figures = [
@@ -29,7 +30,7 @@ const figures = [
     number: "100%",
     unit: "",
     description: "Antibactérien Ions Argent",
-    position: "top-1/2 right-0 md:-right-20"
+    position: "top-1/2 left-0 md:-left-10"
   }
 ];
 
