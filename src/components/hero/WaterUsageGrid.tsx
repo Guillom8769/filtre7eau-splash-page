@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { TeaCup, Utensils, PawPrint, Leaf, UtensilsCrossed, Barbell } from "lucide-react";
+import { Coffee, Utensils, PawPrint, Leaf, UtensilsCrossed, Dumbbell } from "lucide-react";
 
 export interface WaterUsage {
   icon: React.ReactNode;
@@ -18,7 +18,7 @@ export interface WaterUsage {
 
 const waterUsages: WaterUsage[] = [
   {
-    icon: <TeaCup size={24} />,
+    icon: <Coffee size={24} />,
     title: "Boissons",
     description: "Goût pur, sans résidu ni odeur",
     content: {
@@ -63,7 +63,7 @@ const waterUsages: WaterUsage[] = [
     }
   },
   {
-    icon: <Barbell size={24} />,
+    icon: <Dumbbell size={24} />,
     title: "Sport",
     description: "Hydratation optimale pour les activités physiques",
     content: {
