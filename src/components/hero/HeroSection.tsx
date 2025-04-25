@@ -1,9 +1,11 @@
+
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { useRef } from "react";
 import Logo from "./Logo";
 import UsageIcons from "./UsageIcons";
 import KeyFigures from "./KeyFigures";
+import WaterStyl from "./WaterStyl";
 
 const HeroSection = () => {
   const secondScreenRef = useRef<HTMLDivElement>(null);
@@ -69,86 +71,22 @@ const HeroSection = () => {
             />
           </motion.div>
         </div>
+
+        {/* Scroll down indicator */}
+        <motion.div 
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1, duration: 0.5 }}
+          onClick={() => secondScreenRef.current?.scrollIntoView({ behavior: 'smooth' })}
+        >
+          <ChevronDown className="animate-bounce" size={32} />
+        </motion.div>
       </div>
 
       {/* DEUXIÈME ÉCRAN */}
-      <div ref={secondScreenRef} className="container mx-auto px-4 min-h-screen flex flex-col justify-center py-24">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Partie gauche: Produit + Bulles de bénéfices */}
-          <div className="relative">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="relative z-10"
-            >
-              <img
-                src="/lovable-uploads/49f98406-99e8-4d33-a164-9645775f200b.png"
-                alt="Filtre ULTRA CARBON 01 – filtration d'eau du robinet"
-                className="w-full max-w-lg mx-auto drop-shadow-2xl"
-              />
-            </motion.div>
-            
-            {/* Bulles flottantes avec les chiffres clés */}
-            <div className="absolute inset-0 z-20">
-              <KeyFigures />
-            </div>
-          </div>
-
-          {/* Partie droite: Texte inspirant */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-4xl font-light mb-6">Profitez simplement</h2>
-            <p className="text-xl text-gray-600 mb-6 leading-relaxed">
-              Avec ULTRA CARBON 01, transformez votre robinet en source d'eau pure.
-            </p>
-            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              Une installation sans travaux, une filtration de qualité industrielle, et surtout… 
-              la liberté de savourer chaque instant — que ce soit pour votre thé, vos repas, ou vos proches.
-            </p>
-            <p className="text-xl text-water italic">
-              Parce qu'une bonne eau, c'est celle qui simplifie la vie, au quotidien.
-            </p>
-
-            <div className="mt-12 p-6 bg-water/5 rounded-lg border border-water/10 backdrop-blur-sm">
-              <h3 className="font-medium text-lg mb-4">Une qualité industrielle accessible</h3>
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-full bg-water/10 flex items-center justify-center shrink-0">
-                    <span className="text-water">✓</span>
-                  </div>
-                  <div>
-                    <span className="font-medium">Installation sans plombier</span>
-                    <p className="text-sm text-gray-600">Prêt à fonctionner en moins de 30 minutes</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-full bg-water/10 flex items-center justify-center shrink-0">
-                    <span className="text-water">✓</span>
-                  </div>
-                  <div>
-                    <span className="font-medium">Filtration ultra-précise</span>
-                    <p className="text-sm text-gray-600">Élimine microplastiques, résidus et mauvais goûts</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-full bg-water/10 flex items-center justify-center shrink-0">
-                    <span className="text-water">✓</span>
-                  </div>
-                  <div>
-                    <span className="font-medium">Charbon actif naturel</span>
-                    <p className="text-sm text-gray-600">Pour une eau parfaitement pure et savoureuse</p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </motion.div>
-        </div>
+      <div ref={secondScreenRef} className="min-h-screen flex flex-col justify-center py-24">
+        <WaterStyl />
       </div>
     </section>
   );

@@ -1,0 +1,102 @@
+
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import { useIsMobile } from "@/hooks/use-mobile";
+import WaterUsageGrid from "./WaterUsageGrid";
+import KeyFigures from "./KeyFigures";
+import KeyAdvantages from "./KeyAdvantages";
+
+const WaterStyl = () => {
+  const isMobile = useIsMobile();
+  const [selectedUsage, setSelectedUsage] = useState(0);
+  
+  return (
+    <div className="min-h-screen flex flex-col justify-center py-12 md:py-24">
+      <div className="container mx-auto px-4">
+        <div className="grid md:grid-cols-5 gap-8 items-center">
+          {/* Left Column - Filter Image and Key Figures (40% on desktop) */}
+          <div className="md:col-span-2 relative">
+            {/* Mobile Heading (visible only on mobile) */}
+            <div className="block md:hidden mb-8 text-center">
+              <h2 className="text-3xl font-light mb-2">Profitez simplement</h2>
+              <p className="text-xl text-water font-medium">
+                Avec ULTRA CARBON 01, transformez votre robinet en source d'eau pure.
+              </p>
+            </div>
+            
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-water-light/10 to-water-light/30 rounded-full blur-2xl" />
+              <img
+                src="/lovable-uploads/49f98406-99e8-4d33-a164-9645775f200b.png"
+                alt="Filtre ULTRA CARBON 01 – filtration d'eau du robinet"
+                className="relative z-10 w-full max-w-md mx-auto drop-shadow-2xl"
+              />
+              
+              {/* Key Figures Badges */}
+              <div className="absolute inset-0">
+                <KeyFigures />
+              </div>
+            </motion.div>
+            
+            {/* Mobile Key Figures Carousel (visible only on mobile) */}
+            {isMobile && (
+              <div className="mt-12">
+                <Carousel>
+                  <CarouselContent>
+                    {[
+                      { text: "7 L/min – Débit ultra-rapide" },
+                      { text: "0,1 µm – Filtration ultra-fine" },
+                      { text: "100 % – Charbon actif naturel" },
+                      { text: "30 min – Installation sans travaux" }
+                    ].map((figure, i) => (
+                      <CarouselItem key={i} className="basis-3/4 md:basis-1/2">
+                        <div className="bg-white/90 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-water/10 text-center">
+                          <p className="text-water font-medium">{figure.text}</p>
+                        </div>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                </Carousel>
+              </div>
+            )}
+          </div>
+          
+          {/* Right Column - Content (60% on desktop) */}
+          <div className="md:col-span-3">
+            {/* Desktop Heading (visible only on desktop) */}
+            <div className="hidden md:block mb-8">
+              <h2 className="text-4xl font-light mb-4">Profitez simplement</h2>
+              <p className="text-xl text-water font-medium">
+                Avec ULTRA CARBON 01, transformez votre robinet en source d'eau pure.
+              </p>
+            </div>
+            
+            <p className="text-gray-600 mb-8 leading-relaxed">
+              Une installation sans travaux, une filtration de qualité industrielle, et surtout… 
+              la liberté de savourer chaque instant — que ce soit pour votre thé, vos repas, ou vos proches.
+              <br /><br />
+              <span className="italic text-water">Parce qu'une bonne eau, c'est celle qui simplifie la vie, au quotidien.</span>
+            </p>
+            
+            {/* Water Usage Grid */}
+            <WaterUsageGrid selectedUsage={selectedUsage} onSelectUsage={setSelectedUsage} />
+            
+            {/* Key Advantages Card */}
+            <div className="mt-16">
+              <KeyAdvantages />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default WaterStyl;
