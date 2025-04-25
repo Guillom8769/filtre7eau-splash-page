@@ -1,16 +1,13 @@
 
-import { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import WaterUsageGrid from "./WaterUsageGrid";
-import KeyFigures from "./KeyFigures";
-import KeyAdvantages from "./KeyAdvantages";
 
 const WaterStyl = () => {
   return (
     <div className="min-h-screen flex flex-col justify-center py-12 md:py-24">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-5 gap-8 items-center">
-          {/* Left Column - Filter Image and Key Figures (40% on desktop) */}
+          {/* Left Column - Filter Image (40% on desktop) */}
           <div className="md:col-span-2 relative">
             {/* Mobile Heading (visible only on mobile) */}
             <div className="block md:hidden mb-8 text-center">
@@ -33,11 +30,6 @@ const WaterStyl = () => {
                 alt="Filtre ULTRA CARBON 01 – filtration d'eau du robinet"
                 className="relative z-10 w-full max-w-md mx-auto drop-shadow-2xl"
               />
-              
-              {/* Key Figures Badges */}
-              <div className="absolute inset-0">
-                <KeyFigures />
-              </div>
             </motion.div>
           </div>
           
@@ -55,28 +47,6 @@ const WaterStyl = () => {
                 Pure et riche en goût, elle vous accompagne sans plastique ni souci dans tous vos moments de vie.
               </p>
             </div>
-            
-            {/* Water Usage Grid */}
-            <WaterUsageGrid />
-            
-            {/* Key Advantages Card */}
-            <div className="mt-16">
-              <KeyAdvantages />
-            </div>
-
-            {/* Closing Tagline */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="mt-12 p-6 bg-water/5 rounded-xl border border-water/10"
-            >
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Conçu pour tous – familles actives, sportifs, jeunes couples, seniors, écolos ou amateurs de haute technologie –
-                ULTRA CARBON 01 s'adapte à votre style de vie. Découvrez la liberté d'une eau pure et généreuse, enfin à votre portée.
-              </p>
-            </motion.div>
           </div>
         </div>
       </div>
